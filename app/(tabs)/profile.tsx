@@ -24,7 +24,7 @@ export default function ProfileScreen() {
       <View style={styles.productsSection}>
         <Text style={styles.sectionTitle}>Tus compras</Text>
         <FlatList
-          data={products}
+          data={products.slice(4,7)}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <View style={styles.productItem}>

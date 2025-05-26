@@ -8,7 +8,7 @@ export default function LoginScreen() {
   const router = useRouter();
 
   const handleLogin = () => {
-    router.push('../(tabs)/home');
+    router.replace('../(tabs)/home');
   };
 
   return (

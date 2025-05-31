@@ -1,45 +1,19 @@
-import { Link } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
+import { Text, View } from 'react-native';
+import { Button } from '~/components/Button';
 
 export default function DashboardScreen() {
+
+  const router = useRouter()
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>STELLA SHOPP</Text>
-      <Text style={styles.subtitle}>Bienvenido a tu aplicación</Text>
-      <Link href="/(tabs)/products" style={styles.link}>
-        Ver productos
-      </Link>
+    <View className="flex-1 bg-white items-center justify-center p-24">
+      <Text className="text-4xl font-bold text-quarter mb-3">
+        STELLA SHOPP
+      </Text>
+      <Text className="text-base text-primary mb-6">
+        Bienvenido a tu aplicación
+      </Text>
+      <Button text="Ver productos" onPress={()=> router.replace('/(tabs)/products')} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFF', 
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 24,
-  },
-  title: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    color: '#5F5AA5',
-    marginBottom: 12,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#BAACEB', 
-    marginBottom: 24,
-  },
-  link: {
-    fontSize: 16,
-    color: '#FFFFFF',
-    backgroundColor: '#5F5AA5', 
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    borderRadius: 10,
-    textAlign: 'center',
-    overflow: 'hidden',
-  },
-});

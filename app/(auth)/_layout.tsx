@@ -1,14 +1,9 @@
-import { Tabs } from 'expo-router';
+import { Stack } from 'expo-router';
 
-export const AuthLayout = ()=>{
-    return (
-        <Tabs>
-            <Tabs.Screen
-            name = "login"
-            options={{
-               
-                headerShown:false}}>
-            </Tabs.Screen>
-        </Tabs>
-    )
+export default function AuthLayout() {
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="login" />
+    </Stack>
+  );
 }
